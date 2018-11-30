@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -21,6 +21,28 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.App section {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.App section div .logout-btn {
+  text-align: right;
+}
+
+.App section div .logout-btn button {
+  width: 15%;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  cursor: pointer;
+  transition: all linear 0.2s;
+}
+
+.App section div .logout-btn button:hover {
+  background-color: #bd2130;
+  border-color: #bd2130;
 }
 
 @keyframes App-logo-spin {

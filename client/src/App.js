@@ -8,24 +8,12 @@ import Login from "./components/Login";
 import "./App.css";
 
 const Home = props => {
-  const logOut = () => {
-    localStorage.removeItem("jwtToken");
-    props.history.push("/login");
-  };
-
   if (props.loggedIn) {
     return (
       <div>
-        <button
-          onClick={() => logOut()}
-          style={{
-            width: "20%",
-            backgroundColor: "#dc3545",
-            borderColor: "#dc3545"
-          }}
-        >
-          Log out
-        </button>
+        <div className="logout-btn">
+          <button onClick={() => props.logOut()}>Log out</button>
+        </div>
         <ol>
           {props.users.map(user => (
             <li key={user.id}>
@@ -86,26 +74,39 @@ class App extends Component {
     }
   }
 
+  logOut = () => {
+    localStorage.removeItem("jwtToken");
+    this.setState({ loggedIn: false });
+    this.props.history.push("/login");
+  };
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <nav>
-            <NavLink exact to="/" activeStyle={{ textDecoration: "underline" }}>
-              Home
-            </NavLink>
-            &nbsp;|&nbsp;
-            <NavLink
-              to="/register"
-              activeStyle={{ textDecoration: "underline" }}
-            >
-              Register
-            </NavLink>
-            &nbsp;|&nbsp;
-            <NavLink to="/login" activeStyle={{ textDecoration: "underline" }}>
-              Login
-            </NavLink>
-          </nav>
+          {this.state.loggedIn ? (
+            <nav>
+              <NavLink exact to="/">
+                Dad Jokes
+              </NavLink>
+            </nav>
+          ) : (
+            <nav>
+              <NavLink
+                to="/register"
+                activeStyle={{ textDecoration: "underline" }}
+              >
+                Register
+              </NavLink>
+              &nbsp;|&nbsp;
+              <NavLink
+                to="/login"
+                activeStyle={{ textDecoration: "underline" }}
+              >
+                Login
+              </NavLink>
+            </nav>
+          )}
         </header>
         <section>
           <Switch>
@@ -117,6 +118,7 @@ class App extends Component {
                   {...ownProps}
                   loggedIn={this.state.loggedIn}
                   users={this.state.users}
+                  logOut={this.logOut}
                 />
               )}
             />
