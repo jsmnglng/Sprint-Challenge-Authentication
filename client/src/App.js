@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import { NavLink, Route, Switch } from "react-router-dom";
 
+import Register from "./components/Register";
+
 import "./App.css";
+
+const Home = props => {
+  return <h1>Home</h1>;
+};
 
 class App extends Component {
   render() {
@@ -28,8 +34,8 @@ class App extends Component {
         <section>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
+            {/* <Route path="/login" component={Login} /> */}
           </Switch>
         </section>
       </div>
