@@ -16,7 +16,16 @@ const Home = props => {
   if (props.loggedIn) {
     return (
       <div>
-        <button onClick={() => logOut()}>Log out</button>
+        <button
+          onClick={() => logOut()}
+          style={{
+            width: "20%",
+            backgroundColor: "#dc3545",
+            borderColor: "#dc3545"
+          }}
+        >
+          Log out
+        </button>
         <ol>
           {props.users.map(user => (
             <li key={user.id}>

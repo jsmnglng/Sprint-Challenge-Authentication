@@ -17,3 +17,37 @@ a {
   color: #fafafa;
   text-decoration: none;
 }
+
+form {
+  /* border: 1px solid red; */
+  border-radius: 5px;
+  width: 400px;
+  margin: 0 auto;
+  padding: 40px 0;
+  background-color: #f1f1f1;
+}
+
+form div {
+  width: 70%;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+form input {
+  border: 1px solid #e3e3e3;
+  border-radius: 3px;
+  width: 90%;
+  padding: 10px 10px;
+  font-size: 18px;
+}
+
+button {
+  border: 1px solid #3897f0;
+  border-radius: 4px;
+  width: 98%;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #3897f0;
+  color: #fff;
+}

@@ -43,8 +43,8 @@ class Register extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <div>
-            <label htmlFor="username">Username&nbsp;</label>
             <input
+              placeholder="Enter username"
               name="username"
               value={this.state.username}
               onChange={this.handleInputChange}
@@ -52,12 +52,12 @@ class Register extends Component {
             />
           </div>
           <div>
-            <label htmlFor="password">Password&nbsp;</label>
             <input
-              type="password"
+              placeholder="Enter password"
               name="password"
               value={this.state.password}
               onChange={this.handleInputChange}
+              type="password"
             />
           </div>
           <div>
