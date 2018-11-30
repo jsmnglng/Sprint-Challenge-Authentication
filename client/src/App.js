@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { NavLink, Route, Switch } from "react-router-dom";
 
 import Register from "./components/Register";
+import Login from "./components/Login";
 
 import "./App.css";
 
@@ -35,7 +36,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/register" component={Register} />
-            {/* <Route path="/login" component={Login} /> */}
+            <Route path="/login" component={Login} />
           </Switch>
         </section>
       </div>
