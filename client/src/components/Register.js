@@ -49,6 +49,7 @@ class Register extends Component {
               value={this.state.username}
               onChange={this.handleInputChange}
               type="text"
+              required
             />
           </div>
           <div>
@@ -58,13 +59,18 @@ class Register extends Component {
               value={this.state.password}
               onChange={this.handleInputChange}
               type="password"
+              required
             />
           </div>
           <div>
             <button>Register</button>
           </div>
         </form>
-        {this.state.message ? <h4>{this.state.message}</h4> : undefined}
+        {this.state.message ? (
+          <h4 style={{ textAlign: "center" }}>{this.state.message}</h4>
+        ) : (
+          undefined
+        )}
       </div>
     );
   }

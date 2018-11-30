@@ -61,7 +61,11 @@ class Login extends Component {
             <button>Login</button>
           </div>
         </form>
-        {this.state.message ? <h4>{this.state.message}</h4> : undefined}
+        {this.state.message ? (
+          <h4 style={{ textAlign: "center" }}>{this.state.message}</h4>
+        ) : (
+          undefined
+        )}
       </div>
     );
   }
